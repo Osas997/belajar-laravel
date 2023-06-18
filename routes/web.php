@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('testing', [
         "nama" => "Diki Brong",
-        "alamat" => "Cungking Giri"
+        "alamat" => "Cungking Giri",
+        "gender" => "Lanang"
     ]);
 });
