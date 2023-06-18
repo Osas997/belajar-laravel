@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('testing');
+    return view('testing', [
+        "nama" => "Diki Brong",
+        "alamat" => "Cungking Giri"
+    ]);
 });
