@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    return view('testing', [
-        "nama" => "Diki Brong",
-        "alamat" => "Cungking Giri",
-        "gender" => "Lanang"
+    return view('home', [
+        "title" => "Home"
     ]);
 });
+
+Route::get('/blog', [PostsController::class, 'index']);
+Route::get('/blog/{post:slug}', [PostsController::class, 'show']);
+Route::get('/about', [AboutController::class, 'index']);
